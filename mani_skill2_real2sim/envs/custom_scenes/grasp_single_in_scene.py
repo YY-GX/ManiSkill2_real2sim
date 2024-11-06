@@ -859,3 +859,10 @@ class GraspSingleBridgeSpoonInSceneEnv(GraspSingleCustomInSceneEnv):
         kwargs.pop("model_ids", None)
         kwargs["model_ids"] = ["bridge_spoon_generated_modified"]
         super().__init__(**kwargs)
+
+@register_env("GraspSingleCupInScene-v0", max_episode_steps=80)
+class GraspSingleCupInSceneEnv(GraspSingleCustomInSceneEnv):
+    def __init__(self, **kwargs):
+        kwargs.pop("model_ids", None)
+        kwargs["model_ids"] = ["cup"]
+        super().__init__(**kwargs)
